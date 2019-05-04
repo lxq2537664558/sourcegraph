@@ -2,9 +2,9 @@
 
 const path = require('path')
 
-module.exports = (baseConfig, env, config) => {
+module.exports = ({ config, mode }) => {
   config.module.rules.push({
-    test: /\.(ts|tsx)$/,
+    test: /\.tsx?$/,
     loader: require.resolve('babel-loader'),
     options: {
       presets: [['react-app', { flow: false, typescript: true }]],
